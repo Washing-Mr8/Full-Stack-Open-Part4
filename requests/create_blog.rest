@@ -1,0 +1,21 @@
+POST http://localhost:3001/api/blogs 
+Content-Type: application/json
+
+{
+    "title" : "Course" ,
+    "author" : "Joe Swanson",
+    "url" : "course.com",
+    "likes" : 23
+}
+
+### Con token
+POST http://localhost:3001/api/blogs 
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjY4YTdiNWY4NzFmODA5N2M5ZjliZjYxZSIsImlhdCI6MTc1NTg2MDI4NH0.NCimvkxm5xwHRZN84bUZAoRJ3CYeJEEhJjfjSAxLeYE
+
+{
+    "title" : "Programming" ,
+    "author" : "Glenn Quagmire",
+    "url" : "programming.com",
+    "likes" : 30
+}

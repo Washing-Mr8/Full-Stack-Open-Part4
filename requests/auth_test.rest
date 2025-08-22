@@ -1,0 +1,49 @@
+### Login exitoso
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username": "root",
+  "password": "sekret"
+}
+
+### Login con usuario incorrecto
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username": "usuario_inexistente",
+  "password": "password"
+}
+
+### Login con password incorrecto
+POST http://localhost:3001/api/login
+Content-Type: application/json
+
+{
+  "username": "root",
+  "password": "password_incorrecta"
+}
+
+### Crear blog SIN token (debe fallar)
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+
+{
+  "title": "Blog sin token",
+  "author": "Autor Test",
+  "url": "https://test.com",
+  "likes": 10
+}
+
+### Crear blog con token INVALIDO (debe fallar)
+POST http://localhost:3001/api/blogs
+Content-Type: application/json
+Authorization: Bearer token_invalido_12345
+
+{
+  "title": "Blog con token inválido",
+  "author": "Autor Test",
+  "url": "https://test.com",
+  "likes": 10
+}
